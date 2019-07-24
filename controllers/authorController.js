@@ -21,7 +21,7 @@ routes.post('/author', function (req, res) {
 	});
 });
 
-routes.patch('/author/', function (req, res) {
+routes.patch('/author', function (req, res) {
 	var author = req.body;
 	
 	if (author.authorId != null) {
