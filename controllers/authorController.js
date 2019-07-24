@@ -1,5 +1,5 @@
 var routes = require('express').Router();
-var authorDao = require('../dao/authorDao');
+var authorDao = require('../dao/authorDAO');
 
 routes.get('/author', function (req, res) {
 	authorDao.getAllAuthors(function (error, result) {
@@ -21,18 +21,22 @@ routes.post('/author', function (req, res) {
 	});
 });
 
-routes.patch('/author/:id', function (req, res) {
+routes.patch('/author/', function (req, res) {
 	var author = req.body;
-	if (req.params.id != null) {
+	
+	if (author.authorId != null) {
 		authorDao.updateAuthor(author, function (err, result) {
 			if (err) {
 				res.status(400);
 				res.send('[-] Update Author Failed!');
 			}
+			console.log(author);
+			console.log('here')
 			res.status(201);
+			// res.send(author);
 			res.send('[+] Update Author Successful!');
 		});
-	}
+	} 
 });
 
 

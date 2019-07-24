@@ -2,7 +2,7 @@ var routes = require('express').Router();
 var bookDao = require('../dao/bookDao');
 
 routes.get('/book', function (req, res) {
-	bookDao.getAllbooks(function (error, result) {
+	bookDao.getAllBooks(function (error, result) {
 		if (error) throw error;
 		res.setHeader('Content-Type', 'application/json');
 		res.send(result);
