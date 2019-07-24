@@ -30,8 +30,6 @@ routes.patch('/author', function (req, res) {
 				res.status(400);
 				res.send('[-] Update Author Failed!');
 			}
-			console.log(author);
-			console.log('here')
 			res.status(201);
 			// res.send(author);
 			res.send('[+] Update Author Successful!');

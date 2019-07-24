@@ -21,9 +21,10 @@ routes.post('/publisher', function (req, res) {
 	});
 });
 
-routes.patch('/publisher/:id', function (req, res) {
+routes.patch('/publisher', function (req, res) {
 	var publisher = req.body;
-	if (req.params.id != null) {
+	console.log(publisher)
+	if (publisher.publisherId != null) {
 		publisherDao.updatePublisher(publisher, function (err, result) {
 			if (err) {
 				res.status(400);
