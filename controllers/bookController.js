@@ -21,7 +21,7 @@ routes.post('/book', function (req, res) {
 	});
 });
 
-routes.patch('/book/:id', function (req, res) {
+routes.patch('/book/', function (req, res) {
 	var book = req.body;
 	if (book.bookId != null) {
 		bookDao.updateBook(book, function (err) {
