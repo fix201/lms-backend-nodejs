@@ -42,6 +42,7 @@ routes.delete('/publisher/:id', function (req, res) {
 			res.status(400);
 			res.send('[-] Delete Publisher Failed!');
 		}
+		res.status(204)
 		res.send('[+] Delete Publisher Successful!');
 	});
 });

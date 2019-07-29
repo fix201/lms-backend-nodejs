@@ -44,6 +44,7 @@ routes.delete('/author/:id', function (req, res) {
 			res.status(400);
 			res.send('[-] Delete Author Failed!');
 		}
+		res.status(204)
 		res.send('[+] Delete Author Successful!');
 	});
 });
